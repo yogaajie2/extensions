@@ -1,5 +1,5 @@
 ---
-import Card from "../components/card.astro";
+import Card from "../components/Card.astro";
 import data from "../content/extensions/data.json";
 import "./src/styles/global.css";
 ---
@@ -17,6 +17,33 @@ import "./src/styles/global.css";
     <main
       class="min-h-screen bg-linear-[180deg,#ebf2fc_0%,#eef8f9_100%] p-4 text-neutral-900 dark:bg-linear-[180deg,#040918_0%,#091540_100%] dark:text-neutral-100"
     >
+      <section class="my-12 text-center">
+        <h1 class="text-4xl font-bold">Extensions List</h1>
+
+        <div class="mt-8 flex justify-evenly">
+          <button
+            class="rounded-full bg-red-700 px-4 py-2 text-2xl font-medium text-neutral-0 dark:bg-red-400 dark:text-neutral-900"
+            type="button"
+          >
+            All
+          </button>
+
+          <button
+            class="rounded-full border border-neutral-200 bg-neutral-0 px-4 py-2 text-2xl shadow dark:border-neutral-600 dark:bg-neutral-700"
+            type="button"
+          >
+            Active
+          </button>
+
+          <button
+            class="rounded-full border border-neutral-200 bg-neutral-0 px-4 py-2 text-2xl shadow dark:border-neutral-600 dark:bg-neutral-700"
+            type="button"
+          >
+            Inactive
+          </button>
+        </div>
+      </section>
+
       <section class="flex flex-col gap-4">
         {data.map((item) => <Card item={item} />)}
       </section>
