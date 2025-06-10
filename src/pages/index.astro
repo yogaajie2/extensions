@@ -1,4 +1,6 @@
 ---
+import IconMoon from "../assets/images/icon-moon.svg";
+import Logo from "../assets/images/logo.svg";
 import Card from "../components/Card.astro";
 import data from "../content/extensions/data.json";
 import "./src/styles/global.css";
@@ -17,7 +19,20 @@ import "./src/styles/global.css";
     <main
       class="min-h-screen bg-linear-[180deg,#ebf2fc_0%,#eef8f9_100%] p-4 text-neutral-900 dark:bg-linear-[180deg,#040918_0%,#091540_100%] dark:text-neutral-100"
     >
-      <section class="my-12 text-center">
+      <header
+        class="flex items-center justify-between rounded-xl border-neutral-200 bg-neutral-0 p-3 shadow-md dark:bg-neutral-800"
+      >
+        <Logo />
+
+        <button
+          class="rounded-xl bg-neutral-100 p-4 dark:bg-neutral-700"
+          type="button"
+        >
+          <IconMoon />
+        </button>
+      </header>
+
+      <section class="my-10 text-center">
         <h1 class="text-4xl font-bold">Extensions List</h1>
 
         <div class="mt-8 flex justify-evenly">
