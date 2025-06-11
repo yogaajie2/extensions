@@ -1,9 +1,12 @@
 ---
+import { Image } from "astro:assets";
 import "@fontsource-variable/noto-sans";
+import IconMoon from "../assets/images/icon-moon.svg";
+import IconSun from "../assets/images/icon-sun.svg";
 import Logo from "../assets/images/logo.svg";
 import Card from "../components/Card.astro";
 import data from "../content/extensions/data.json";
-import "./src/styles/global.css";
+import "../styles/global.css";
 ---
 
 <html lang="en">
@@ -30,17 +33,8 @@ import "./src/styles/global.css";
             id="toggleTheme"
             type="button"
           >
-            <img
-              alt=""
-              class="dark:hidden"
-              src="/src/assets/images/icon-moon.svg"
-            />
-
-            <img
-              alt=""
-              class="hidden dark:block"
-              src="/src/assets/images/icon-sun.svg"
-            />
+            <Image alt="" class="dark:hidden" src={IconMoon} />
+            <Image alt="" class="hidden dark:block" src={IconSun} />
           </button>
         </header>
 
