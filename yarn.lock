@@ -331,6 +331,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource-variable/noto-sans@npm:^5.2.7":
+  version: 5.2.7
+  resolution: "@fontsource-variable/noto-sans@npm:5.2.7"
+  checksum: 10c0/ed7961446ecb1f97fc256d7238e9c7f235540b5f6bfb5358c8e94ae1b02304ed5d94e54c7413ebb3612e66c545558662485cb0c1b150c42b4428444716f82661
+  languageName: node
+  linkType: hard
+
 "@img/sharp-darwin-arm64@npm:0.33.5":
   version: 0.33.5
   resolution: "@img/sharp-darwin-arm64@npm:0.33.5"
@@ -1895,6 +1902,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "extensions@workspace:."
   dependencies:
+    "@fontsource-variable/noto-sans": "npm:^5.2.7"
     "@tailwindcss/vite": "npm:^4.1.8"
     astro: "npm:^5.9.1"
     daisyui: "npm:^5.0.43"
