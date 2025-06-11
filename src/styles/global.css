@@ -16,3 +16,20 @@
   --color-red-500: hsl(3, 71%, 56%);
   --color-red-700: hsl(3, 77%, 44%);
 }
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+
+  /* @variant md {
+    padding-inline: 4rem;
+  }
+
+  @variant lg {
+    padding-inline: 6rem;
+  }
+
+  @variant xl {
+    padding-inline: 8rem;
+  } */
+}
