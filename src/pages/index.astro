@@ -27,6 +27,7 @@ import "./src/styles/global.css";
 
           <button
             class="rounded-xl bg-neutral-100 p-4 hover:bg-neutral-300 focus:outline-2 focus:outline-offset-1 focus:outline-red-400 dark:bg-neutral-700 dark:hover:bg-neutral-600"
+            id="toggleTheme"
             type="button"
           >
             <img
@@ -79,3 +80,11 @@ import "./src/styles/global.css";
     </main>
   </body>
 </html>
+
+<script>
+  const button = document.getElementById("toggleTheme");
+
+  button?.addEventListener("click", () => {
+    document.querySelector("html")?.classList.toggle("dark");
+  });
+</script>
