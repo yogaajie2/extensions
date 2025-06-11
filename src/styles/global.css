@@ -15,6 +15,8 @@
   --color-red-400: hsl(3, 86%, 64%);
   --color-red-500: hsl(3, 71%, 56%);
   --color-red-700: hsl(3, 77%, 44%);
+
+  --font-sans: "Noto Sans Variable", "sans-serif";
 }
 
 @utility container {
