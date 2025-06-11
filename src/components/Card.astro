@@ -24,7 +24,7 @@ const { item } = Astro.props;
 
   <div class="mt-auto flex items-center justify-between">
     <button
-      class="rounded-full border border-neutral-200 px-4 py-1 focus:bg-neutral-100 focus:outline-2 focus:outline-offset-1 focus:outline-red-400 dark:border-neutral-600 dark:focus:bg-neutral-600"
+      class="rounded-full border border-neutral-200 px-4 py-1 hover:bg-red-700 hover:text-neutral-0 focus:bg-neutral-100 focus:outline-2 focus:outline-offset-1 focus:outline-red-400 dark:border-neutral-600 dark:hover:border-transparent dark:hover:bg-red-400 dark:hover:text-neutral-900 dark:focus:bg-neutral-600"
       type="button"
     >
       Remove
@@ -32,7 +32,7 @@ const { item } = Astro.props;
 
     <input
       checked
-      class="toggle border-neutral-300 bg-neutral-300 text-neutral-0 checked:border-red-700 checked:bg-red-700 focus:outline-2 focus:outline-offset-1 focus:outline-red-400 dark:border-neutral-600 dark:bg-neutral-600 dark:checked:border-red-400 dark:checked:bg-red-400"
+      class="toggle border-neutral-300 bg-neutral-300 text-neutral-0 checked:border-red-700 checked:bg-red-700 checked:hover:border-red-500 checked:hover:bg-red-500 focus:outline-2 focus:outline-offset-1 focus:outline-red-400 dark:border-neutral-600 dark:bg-neutral-600 dark:checked:border-red-400 dark:checked:bg-red-400"
       type="checkbox"
     />
   </div>
