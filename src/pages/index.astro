@@ -22,13 +22,23 @@ import "./src/styles/global.css";
       <header
         class="flex items-center justify-between rounded-xl border-neutral-200 bg-neutral-0 p-3 shadow-md dark:bg-neutral-800"
       >
-        <Logo />
+        <Logo class="dark:invert" />
 
         <button
           class="rounded-xl bg-neutral-100 p-4 dark:bg-neutral-700"
           type="button"
         >
-          <IconMoon />
+          <img
+            alt=""
+            class="dark:hidden"
+            src="/src/assets/images/icon-moon.svg"
+          />
+
+          <img
+            alt=""
+            class="hidden dark:block"
+            src="/src/assets/images/icon-sun.svg"
+          />
         </button>
       </header>
 
