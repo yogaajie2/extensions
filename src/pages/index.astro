@@ -19,59 +19,63 @@ import "./src/styles/global.css";
     <main
       class="min-h-screen bg-linear-[180deg,#ebf2fc_0%,#eef8f9_100%] p-4 text-neutral-900 dark:bg-linear-[180deg,#040918_0%,#091540_100%] dark:text-neutral-100"
     >
-      <header
-        class="flex items-center justify-between rounded-xl border-neutral-200 bg-neutral-0 p-3 shadow-md dark:bg-neutral-800"
-      >
-        <Logo class="dark:invert" />
-
-        <button
-          class="rounded-xl bg-neutral-100 p-4 dark:bg-neutral-700"
-          type="button"
+      <div class="md:container">
+        <header
+          class="flex items-center justify-between rounded-xl border-neutral-200 bg-neutral-0 p-3 shadow-md dark:bg-neutral-800"
         >
-          <img
-            alt=""
-            class="dark:hidden"
-            src="/src/assets/images/icon-moon.svg"
-          />
-
-          <img
-            alt=""
-            class="hidden dark:block"
-            src="/src/assets/images/icon-sun.svg"
-          />
-        </button>
-      </header>
-
-      <section class="my-10 text-center">
-        <h1 class="text-4xl font-bold">Extensions List</h1>
-
-        <div class="mt-8 flex justify-evenly">
-          <button
-            class="rounded-full bg-red-700 px-4 py-2 text-2xl font-medium text-neutral-0 dark:bg-red-400 dark:text-neutral-900"
-            type="button"
-          >
-            All
-          </button>
+          <Logo class="dark:invert" />
 
           <button
-            class="rounded-full border border-neutral-200 bg-neutral-0 px-4 py-2 text-2xl shadow dark:border-neutral-600 dark:bg-neutral-700"
+            class="rounded-xl bg-neutral-100 p-4 dark:bg-neutral-700"
             type="button"
           >
-            Active
-          </button>
+            <img
+              alt=""
+              class="dark:hidden"
+              src="/src/assets/images/icon-moon.svg"
+            />
 
-          <button
-            class="rounded-full border border-neutral-200 bg-neutral-0 px-4 py-2 text-2xl shadow dark:border-neutral-600 dark:bg-neutral-700"
-            type="button"
-          >
-            Inactive
+            <img
+              alt=""
+              class="hidden dark:block"
+              src="/src/assets/images/icon-sun.svg"
+            />
           </button>
-        </div>
-      </section>
+        </header>
 
-      <section class="flex flex-col gap-4">
-        {data.map((item) => <Card item={item} />)}
-      </section>
+        <section
+          class="my-10 flex flex-col text-center md:mb-6 md:flex-row md:items-center md:justify-between"
+        >
+          <h1 class="text-4xl font-bold">Extensions List</h1>
+
+          <div class="mt-8 flex justify-evenly md:mt-0 md:gap-4">
+            <button
+              class="rounded-full bg-red-700 px-4 py-2 text-2xl font-medium text-neutral-0 dark:bg-red-400 dark:text-neutral-900"
+              type="button"
+            >
+              All
+            </button>
+
+            <button
+              class="rounded-full border border-neutral-200 bg-neutral-0 px-4 py-2 text-2xl shadow dark:border-neutral-600 dark:bg-neutral-700"
+              type="button"
+            >
+              Active
+            </button>
+
+            <button
+              class="rounded-full border border-neutral-200 bg-neutral-0 px-4 py-2 text-2xl shadow dark:border-neutral-600 dark:bg-neutral-700"
+              type="button"
+            >
+              Inactive
+            </button>
+          </div>
+        </section>
+
+        <section class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {data.map((item) => <Card item={item} />)}
+        </section>
+      </div>
     </main>
   </body>
 </html>
