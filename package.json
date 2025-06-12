@@ -21,5 +21,6 @@
     "prettier": "3.5.3",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.12"
-  }
+  },
+  "packageManager": "yarn@4.9.2"
 }
