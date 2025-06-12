@@ -1,22 +1,22 @@
+import type { Extension } from "../types";
+
 interface Props {
-  item: {
-    description: string;
-    logo: string;
-    name: string;
-  };
+  data: Extension;
+  handleActiveChange: (extensionName: string, value: boolean) => void;
+  handleRemoveExtension: (extensionName: string) => void;
 }
 
-const Card = ({ item }: Props) => {
+const Card = ({ data, handleActiveChange, handleRemoveExtension }: Props) => {
   return (
     <div class="flex min-h-48 flex-col rounded-2xl border border-neutral-200 bg-neutral-0 p-4 shadow dark:border-neutral-600 dark:bg-neutral-800">
       <div class="flex gap-4">
-        <img class="h-12 w-12" src={item.logo} alt={item.name} />
+        <img class="h-12 w-12" src={data.logo} alt={data.name} />
 
         <div>
-          <h2 class="text-lg font-bold">{item.name}</h2>
+          <h2 class="text-lg font-bold">{data.name}</h2>
 
           <p class="text-neutral-600 dark:text-neutral-300">
-            {item.description}
+            {data.description}
           </p>
         </div>
       </div>
@@ -25,14 +25,18 @@ const Card = ({ item }: Props) => {
         <button
           class="rounded-full border border-neutral-200 px-4 py-1 transition-colors hover:bg-red-700 hover:text-neutral-0 focus:bg-neutral-100 focus:outline-2 focus:outline-offset-1 focus:outline-red-400 dark:border-neutral-600 dark:hover:border-transparent dark:hover:bg-red-400 dark:hover:text-neutral-900 dark:focus:bg-neutral-600"
           type="button"
+          onClick={() => handleRemoveExtension(data.name)}
         >
           Remove
         </button>
 
         <input
-          checked
+          checked={data.isActive}
           class="toggle border-neutral-300 bg-neutral-300 text-neutral-0 transition-colors checked:border-red-700 checked:bg-red-700 checked:hover:border-red-500 checked:hover:bg-red-500 focus:outline-2 focus:outline-offset-1 focus:outline-red-400 dark:border-neutral-600 dark:bg-neutral-600 dark:checked:border-red-400 dark:checked:bg-red-400"
           type="checkbox"
+          onChange={(event) =>
+            handleActiveChange(data.name, event.currentTarget.checked)
+          }
         />
       </div>
     </div>
