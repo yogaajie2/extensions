@@ -25,7 +25,13 @@ const Card = ({ data, handleActiveChange, handleRemoveExtension }: Props) => {
         <button
           class="rounded-full border border-neutral-200 px-4 py-1 transition-colors hover:bg-red-700 hover:text-neutral-0 focus:bg-neutral-100 focus:outline-2 focus:outline-offset-1 focus:outline-red-400 dark:border-neutral-600 dark:hover:border-transparent dark:hover:bg-red-400 dark:hover:text-neutral-900 dark:focus:bg-neutral-600"
           type="button"
-          onClick={() => handleRemoveExtension(data.name)}
+          onClick={() => {
+            const dialog: HTMLDialogElement = document.getElementById(
+              "confirmationModal",
+            ) as HTMLDialogElement;
+
+            dialog.showModal();
+          }}
         >
           Remove
         </button>
@@ -39,6 +45,31 @@ const Card = ({ data, handleActiveChange, handleRemoveExtension }: Props) => {
           }
         />
       </div>
+
+      <dialog id="confirmationModal" className="modal">
+        <div className="modal-box rounded-2xl bg-neutral-0 dark:bg-neutral-700">
+          <h3 className="text-lg font-bold">Are you sure?</h3>
+
+          <p className="py-4">
+            Do you want to remove the {data.name} extension?
+          </p>
+
+          <div className="modal-action">
+            <form className="flex gap-4" method="dialog">
+              <button
+                className="rounded-full border border-neutral-200 px-4 py-1 transition-colors hover:bg-red-700 hover:text-neutral-0 focus:bg-neutral-100 focus:outline-2 focus:outline-offset-1 focus:outline-red-400 dark:border-neutral-600 dark:hover:border-transparent dark:hover:bg-red-400 dark:hover:text-neutral-900 dark:focus:bg-neutral-600"
+                onClick={() => handleRemoveExtension(data.name)}
+              >
+                Yes
+              </button>
+
+              <button className="rounded-full border border-neutral-200 px-4 py-1 transition-colors hover:bg-red-700 hover:text-neutral-0 focus:bg-neutral-100 focus:outline-2 focus:outline-offset-1 focus:outline-red-400 dark:border-neutral-600 dark:hover:border-transparent dark:hover:bg-red-400 dark:hover:text-neutral-900 dark:focus:bg-neutral-600">
+                No
+              </button>
+            </form>
+          </div>
+        </div>
+      </dialog>
     </div>
   );
 };
