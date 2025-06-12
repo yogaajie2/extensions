@@ -7,6 +7,16 @@
   }
 }
 
+@layer components {
+  .filter-button {
+    @apply bg-neutral-0 dark:hover:text-neutral-0 rounded-full border border-neutral-200 px-4 py-2 text-2xl shadow transition-colors hover:bg-neutral-100 hover:text-neutral-600 focus:outline-2 focus:outline-offset-1 focus:outline-red-400 dark:border-neutral-600 dark:bg-neutral-700 dark:hover:bg-neutral-600;
+  }
+
+  .filter-button-active {
+    @apply text-neutral-0 rounded-full bg-red-700 px-4 py-2 text-2xl font-medium transition-colors hover:bg-red-500 focus:outline-2 focus:outline-offset-1 focus:outline-red-400 dark:bg-red-400 dark:text-neutral-900;
+  }
+}
+
 @plugin "daisyui";
 
 @theme {
