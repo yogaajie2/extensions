@@ -13,15 +13,17 @@ const ExtensionsList = () => {
   });
 
   function handleActiveChange(extensionName: string, value: boolean) {
-    setExtensions(
-      extensions.map((extension) => {
-        if (extension.name === extensionName) {
-          return { ...extension, isActive: value };
-        } else {
-          return extension;
-        }
-      }),
-    );
+    setTimeout(() => {
+      setExtensions(
+        extensions.map((extension) => {
+          if (extension.name === extensionName) {
+            return { ...extension, isActive: value };
+          } else {
+            return extension;
+          }
+        }),
+      );
+    }, 500);
   }
 
   function handleRemoveExtension(extensionName: string) {
