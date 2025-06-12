@@ -44,26 +44,9 @@ import "../styles/global.css";
           <h1 class="text-4xl font-bold">Extensions List</h1>
 
           <div class="mt-8 flex justify-evenly md:mt-0 md:gap-4">
-            <button
-              class="focus: rounded-full bg-red-700 px-4 py-2 text-2xl font-medium text-neutral-0 hover:bg-red-500 focus:outline-2 focus:outline-offset-1 focus:outline-red-400 dark:bg-red-400 dark:text-neutral-900"
-              type="button"
-            >
-              All
-            </button>
-
-            <button
-              class="rounded-full border border-neutral-200 bg-neutral-0 px-4 py-2 text-2xl shadow hover:bg-neutral-100 hover:text-neutral-600 focus:outline-2 focus:outline-offset-1 focus:outline-red-400 dark:border-neutral-600 dark:bg-neutral-700 dark:hover:bg-neutral-600 dark:hover:text-neutral-0"
-              type="button"
-            >
-              Active
-            </button>
-
-            <button
-              class="rounded-full border border-neutral-200 bg-neutral-0 px-4 py-2 text-2xl shadow hover:bg-neutral-100 hover:text-neutral-600 focus:outline-2 focus:outline-offset-1 focus:outline-red-400 dark:border-neutral-600 dark:bg-neutral-700 dark:hover:bg-neutral-600 dark:hover:text-neutral-0"
-              type="button"
-            >
-              Inactive
-            </button>
+            <button class="filter-button-active" type="button">All</button>
+            <button class="filter-button" type="button">Active</button>
+            <button class="filter-button" type="button">Inactive</button>
           </div>
         </section>
 
