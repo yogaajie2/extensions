@@ -72,8 +72,10 @@ const ExtensionsList = () => {
         {filteredExtensions.map((extension) => (
           <Card
             data={extension}
+            filter={filter}
             handleActiveChange={handleActiveChange}
             handleRemoveExtension={handleRemoveExtension}
+            key={extension.name}
           />
         ))}
       </section>

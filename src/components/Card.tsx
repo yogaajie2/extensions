@@ -1,14 +1,29 @@
+import { useState } from "preact/hooks";
 import type { Extension } from "../types";
 
 interface Props {
   data: Extension;
+  filter: "all" | "active" | "inactive";
   handleActiveChange: (extensionName: string, value: boolean) => void;
   handleRemoveExtension: (extensionName: string) => void;
 }
 
-const Card = ({ data, handleActiveChange, handleRemoveExtension }: Props) => {
+const Card = ({
+  data,
+  filter,
+  handleActiveChange,
+  handleRemoveExtension,
+}: Props) => {
+  const [isFading, setIsFading] = useState(false);
+
+  const [lastCheckedValue, setLastCheckedValue] = useState<boolean | undefined>(
+    undefined,
+  );
+
   return (
-    <div class="flex min-h-48 flex-col rounded-2xl border border-neutral-200 bg-neutral-0 p-4 shadow dark:border-neutral-600 dark:bg-neutral-800">
+    <div
+      class={`flex min-h-48 flex-col rounded-2xl border border-neutral-200 bg-neutral-0 p-4 shadow transition delay-75 dark:border-neutral-600 dark:bg-neutral-800 ${isFading ? "scale-0 opacity-0" : ""}`}
+    >
       <div class="flex gap-4">
         <img class="h-12 w-12" src={data.logo} alt={data.name} />
 
@@ -37,12 +52,21 @@ const Card = ({ data, handleActiveChange, handleRemoveExtension }: Props) => {
         </button>
 
         <input
-          checked={data.isActive}
+          checked={isFading ? lastCheckedValue : data.isActive}
           class="toggle border-neutral-300 bg-neutral-300 text-neutral-0 transition-colors checked:border-red-700 checked:bg-red-700 checked:hover:border-red-500 checked:hover:bg-red-500 focus:outline-2 focus:outline-offset-1 focus:outline-red-400 dark:border-neutral-600 dark:bg-neutral-600 dark:checked:border-red-400 dark:checked:bg-red-400"
           type="checkbox"
-          onChange={(event) =>
-            handleActiveChange(data.name, event.currentTarget.checked)
-          }
+          onChange={(event) => {
+            setTimeout(() => {
+              if (filter !== "all") {
+                setIsFading(true);
+
+                // Prevent toggle switching back after change
+                setLastCheckedValue(event.currentTarget.checked);
+              }
+            }, 100);
+
+            handleActiveChange(data.name, event.currentTarget.checked);
+          }}
         />
       </div>
 
